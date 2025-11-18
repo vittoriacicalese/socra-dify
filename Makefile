@@ -7,6 +7,35 @@ VERSION=latest
 # Default target - show help
 .DEFAULT_GOAL := help
 
+# Runtime / stack helpers (MEDAI/OSCE)
+DIFY_DOCKER_DIR := docker
+
+.PHONY: up down logs ps rebuild-video-extractor rebuild-api
+
+## Start the complete stack (Dify + video-extractor)
+up:
+	cd $(DIFY_DOCKER_DIR) && docker compose up -d --build
+
+## Stop and remove containers + volumes
+down:
+	cd $(DIFY_DOCKER_DIR) && docker compose down -v
+
+## Stream logs from all services
+logs:
+	cd $(DIFY_DOCKER_DIR) && docker compose logs -f
+
+## Show running containers for this stack
+ps:
+	cd $(DIFY_DOCKER_DIR) && docker compose ps
+
+## Rebuild only the video-extractor service (no cache)
+rebuild-video-extractor:
+	cd $(DIFY_DOCKER_DIR) && docker compose build --no-cache video-extractor
+
+## Rebuild only the Dify API service (no cache)
+rebuild-api:
+	cd $(DIFY_DOCKER_DIR) && docker compose build --no-cache api
+
 # Backend Development Environment Setup
 .PHONY: dev-setup prepare-docker prepare-web prepare-api
 
@@ -126,6 +155,14 @@ help:
 	@echo "  make build-all      - Build all Docker images"
 	@echo "  make push-all       - Push all Docker images"
 	@echo "  make build-push-all - Build and push all Docker images"
+	@echo ""
+	@echo "Runtime Stack (MEDAI/OSCE):"
+	@echo "  make up                     - Start full stack (Dify + video-extractor)"
+	@echo "  make down                   - Stop stack and remove volumes"
+	@echo "  make logs                   - Stream logs from all services"
+	@echo "  make ps                     - Show running containers"
+	@echo "  make rebuild-video-extractor- Rebuild only video-extractor image"
+	@echo "  make rebuild-api            - Rebuild only API image"
 
 # Phony targets
-.PHONY: build-web build-api push-web push-api build-all push-all build-push-all dev-setup prepare-docker prepare-web prepare-api dev-clean help format check lint type-check
+.PHONY: build-web build-api push-web push-api build-all push-all build-push-all dev-setup prepare-docker prepare-web prepare-api dev-clean help format check lint type-check up down logs ps rebuild-video-extractor rebuild-api
