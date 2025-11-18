@@ -1,216 +1,373 @@
-![cover-v5-optimized](./images/GitHub_README_if.png)
+# socra-dify — MEDAI/OSCE Reproducible Environment
 
-<p align="center">
-  📌 <a href="https://dify.ai/blog/introducing-dify-workflow-file-upload-a-demo-on-ai-podcast">Introducing Dify Workflow File Upload: Recreate Google NotebookLM Podcast</a>
-</p>
+This repository is a customized fork of [langgenius/dify](https://github.com/langgenius/dify) built specifically for the **MEDAI / OSCE project**.
 
-<p align="center">
-  <a href="https://cloud.dify.ai">Dify Cloud</a> ·
-  <a href="https://docs.dify.ai/getting-started/install-self-hosted">Self-hosting</a> ·
-  <a href="https://docs.dify.ai">Documentation</a> ·
-  <a href="https://dify.ai/pricing">Dify edition overview</a>
-</p>
+It integrates:
 
-<p align="center">
-    <a href="https://dify.ai" target="_blank">
-        <img alt="Static Badge" src="https://img.shields.io/badge/Product-F04438"></a>
-    <a href="https://dify.ai/pricing" target="_blank">
-        <img alt="Static Badge" src="https://img.shields.io/badge/free-pricing?logo=free&color=%20%23155EEF&label=pricing&labelColor=%20%23528bff"></a>
-    <a href="https://discord.gg/FngNHpbcY7" target="_blank">
-        <img src="https://img.shields.io/discord/1082486657678311454?logo=discord&labelColor=%20%235462eb&logoColor=%20%23f5f5f5&color=%20%235462eb"
-            alt="chat on Discord"></a>
-    <a href="https://reddit.com/r/difyai" target="_blank">  
-        <img src="https://img.shields.io/reddit/subreddit-subscribers/difyai?style=plastic&logo=reddit&label=r%2Fdifyai&labelColor=white"
-            alt="join Reddit"></a>
-    <a href="https://twitter.com/intent/follow?screen_name=dify_ai" target="_blank">
-        <img src="https://img.shields.io/twitter/follow/dify_ai?logo=X&color=%20%23f5f5f5"
-            alt="follow on X(Twitter)"></a>
-    <a href="https://www.linkedin.com/company/langgenius/" target="_blank">
-        <img src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff"
-            alt="follow on LinkedIn"></a>
-    <a href="https://hub.docker.com/u/langgenius" target="_blank">
-        <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/langgenius/dify-web?labelColor=%20%23FDB062&color=%20%23f79009"></a>
-    <a href="https://github.com/langgenius/dify/graphs/commit-activity" target="_blank">
-        <img alt="Commits last month" src="https://img.shields.io/github/commit-activity/m/langgenius/dify?labelColor=%20%2332b583&color=%20%2312b76a"></a>
-    <a href="https://github.com/langgenius/dify/" target="_blank">
-        <img alt="Issues closed" src="https://img.shields.io/github/issues-search?query=repo%3Alanggenius%2Fdify%20is%3Aclosed&label=issues%20closed&labelColor=%20%237d89b0&color=%20%235d6b98"></a>
-    <a href="https://github.com/langgenius/dify/discussions/" target="_blank">
-        <img alt="Discussion posts" src="https://img.shields.io/github/discussions/langgenius/dify?labelColor=%20%239b8afb&color=%20%237a5af8"></a>
-</p>
+- A **custom video-extractor microservice** (for video frame extraction + audio extraction)
+- A **modified Dify Docker environment** that automatically builds and runs the microservice
+- An exported **MEDAI/OSCE Dify workflow** (`workflows/MVP-complete.yml`)
+- A **Makefile** that simplifies startup and teardown
+- A fully reproducible layout so teammates can clone + run the system with no manual edits
 
-<p align="center">
-  <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
-  <a href="./docs/zh-TW/README.md"><img alt="繁體中文文件" src="https://img.shields.io/badge/繁體中文-d9d9d9"></a>
-  <a href="./docs/zh-CN/README.md"><img alt="简体中文文件" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
-  <a href="./docs/ja-JP/README.md"><img alt="日本語のREADME" src="https://img.shields.io/badge/日本語-d9d9d9"></a>
-  <a href="./docs/es-ES/README.md"><img alt="README en Español" src="https://img.shields.io/badge/Español-d9d9d9"></a>
-  <a href="./docs/fr-FR/README.md"><img alt="README en Français" src="https://img.shields.io/badge/Français-d9d9d9"></a>
-  <a href="./docs/tlh/README.md"><img alt="README tlhIngan Hol" src="https://img.shields.io/badge/Klingon-d9d9d9"></a>
-  <a href="./docs/ko-KR/README.md"><img alt="README in Korean" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
-  <a href="./docs/ar-SA/README.md"><img alt="README بالعربية" src="https://img.shields.io/badge/العربية-d9d9d9"></a>
-  <a href="./docs/tr-TR/README.md"><img alt="Türkçe README" src="https://img.shields.io/badge/Türkçe-d9d9d9"></a>
-  <a href="./docs/vi-VN/README.md"><img alt="README Tiếng Việt" src="https://img.shields.io/badge/Ti%E1%BA%BFng%20Vi%E1%BB%87t-d9d9d9"></a>
-  <a href="./docs/de-DE/README.md"><img alt="README in Deutsch" src="https://img.shields.io/badge/German-d9d9d9"></a>
-  <a href="./docs/bn-BD/README.md"><img alt="README in বাংলা" src="https://img.shields.io/badge/বাংলা-d9d9d9"></a>
-</p>
+This README provides **end-to-end setup instructions**, from fresh clone → launch → workflow import → running OSCE videos.
 
-Dify is an open-source platform for developing LLM applications. Its intuitive interface combines agentic AI workflows, RAG pipelines, agent capabilities, model management, observability features, and more—allowing you to quickly move from prototype to production.
+---
 
-## Quick start
+## 🚀 1. Overview
 
-> Before installing Dify, make sure your machine meets the following minimum system requirements:
->
-> - CPU >= 2 Core
-> - RAM >= 4 GiB
+This fork allows you to:
 
-<br/>
+- Run the complete Dify stack locally (API, UI, workers, Postgres, Redis)
+- Automatically launch the `video-extractor` HTTP microservice used by the ingestion node
+- Import the OSCE workflow and run long-form OSCE video grading pipelines
+- Fully reproduce the environment on any teammate’s machine
 
-The easiest way to start the Dify server is through [Docker Compose](docker/docker-compose.yaml). Before running Dify with the following commands, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
+Everything required lives inside this repository.
 
-```bash
-cd dify
-cd docker
-cp .env.example .env
-docker compose up -d
+---
+
+## 📁 2. Repository Structure (Important)
+
+Key paths in this fork:
+
+```text
+socra-dify/
+├── docker/
+│   ├── docker-compose.yaml        # main Docker stack (includes video-extractor)
+│   ├── .env.example               # template for local configuration
+│   └── video-extractor/           # custom HTTP microservice for OSCE videos
+│       ├── Dockerfile
+│       ├── main.py                # service entrypoint (HTTP API)
+│       └── ...                    # any additional code / assets
+├── workflows/
+│   └── MVP-complete.yml           # exported MEDAI/OSCE workflow for Dify
+├── Makefile                       # helper targets for docker compose
+└── ...                            # standard Dify source tree (api, web, worker, etc.)
 ```
 
-After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
+---
 
-#### Seeking help
+## 🧩 3. Prerequisites
 
-Please refer to our [FAQ](https://docs.dify.ai/getting-started/install-self-hosted/faqs) if you encounter problems setting up Dify. Reach out to [the community and us](#community--contact) if you are still having issues.
+Make sure you have:
 
-> If you'd like to contribute to Dify or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+### Required
 
-## Key features
+- **Docker Desktop** (macOS/Windows)  
+  OR  
+- **Docker Engine + docker-compose plugin** (Linux)
 
-**1. Workflow**:
-Build and test powerful AI workflows on a visual canvas, leveraging all the following features and beyond.
+### Optional (but helpful)
 
-**2. Comprehensive model support**:
-Seamless integration with hundreds of proprietary / open-source LLMs from dozens of inference providers and self-hosted solutions, covering GPT, Mistral, Llama3, and any OpenAI API-compatible models. A full list of supported model providers can be found [here](https://docs.dify.ai/getting-started/readme/model-providers).
+- VSCode or similar editor
+- A stable internet connection for model downloads
 
-![providers-v5](https://github.com/langgenius/dify/assets/13230914/5a17bdbe-097a-4100-8363-40255b70f6e3)
+### You must have at least one model provider key
 
-**3. Prompt IDE**:
-Intuitive interface for crafting prompts, comparing model performance, and adding additional features such as text-to-speech to a chat-based app.
+- Example: `OPENAI_API_KEY`
 
-**4. RAG Pipeline**:
-Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
+---
 
-**5. Agent capabilities**:
-You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DALL·E, Stable Diffusion and WolframAlpha.
+## ✅ Step 0 — Clone the Repository
 
-**6. LLMOps**:
-Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
+```bash
+git clone https://github.com/vittoriacicalese/socra-dify.git
+cd socra-dify
+```
 
-**7. Backend-as-a-Service**:
-All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
+---
 
-## Using Dify
+## ✅ Step 1 — Configure Environment Variables
 
-- **Cloud <br/>**
-  We host a [Dify Cloud](https://dify.ai) service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.
+Navigate into the `docker` folder:
 
-- **Self-hosting Dify Community Edition<br/>**
-  Quickly get Dify running in your environment with this [starter guide](#quick-start).
-  Use our [documentation](https://docs.dify.ai) for further references and more in-depth instructions.
+```bash
+cd docker
+```
 
-- **Dify for enterprise / organizations<br/>**
-  We provide additional enterprise-centric features. [Send us an email](mailto:business@dify.ai?subject=%5BGitHub%5DBusiness%20License%20Inquiry) to discuss your enterprise needs. <br/>
+Copy the template environment file:
 
-  > For startups and small businesses using AWS, check out [Dify Premium on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6) and deploy it to your own AWS VPC with one click. It's an affordable AMI offering with the option to create apps with custom logo and branding.
+```bash
+cp .env.example .env
+```
 
-## Staying ahead
+Open `.env` and fill in real values:
 
-Star Dify on GitHub and be instantly notified of new releases.
+```env
+INIT_EMAIL=admin@example.com
+INIT_PASSWORD=ReplaceMe123!
+INIT_USERNAME=admin
 
-![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
+OPENAI_API_KEY=your-real-key-here
+```
 
-## Advanced Setup
+### 🔒 Important Notes
 
-### Custom configurations
+- Never commit `.env` (it contains secrets).
+- `.env.example` contains placeholders only and is safe to commit.
+- Real provider keys must live only in:
+  - The local `.env` file
+  - The provider configuration inside the Dify UI
 
-If you need to customize the configuration, please refer to the comments in our [.env.example](docker/.env.example) file and update the corresponding values in your `.env` file. Additionally, you might need to make adjustments to the `docker-compose.yaml` file itself, such as changing image versions, port mappings, or volume mounts, based on your specific deployment environment and requirements. After making any changes, please re-run `docker-compose up -d`. You can find the full list of available environment variables [here](https://docs.dify.ai/getting-started/install-self-hosted/environments).
+Then return to the repo root:
 
-### Metrics Monitoring with Grafana
+```bash
+cd ..
+```
 
-Import the dashboard to Grafana, using Dify's PostgreSQL database as data source, to monitor metrics in granularity of apps, tenants, messages, and more.
+---
 
-- [Grafana Dashboard by @bowenliang123](https://github.com/bowenliang123/dify-grafana-dashboard)
+## ✅ Step 2 — Start the Full Dify + Video Extractor Stack
 
-### Deployment with Kubernetes
+From the repository root:
 
-If you'd like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow Dify to be deployed on Kubernetes.
+```bash
+make up
+```
 
-- [Helm Chart by @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
-- [Helm Chart by @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
-- [Helm Chart by @magicsong](https://github.com/magicsong/ai-charts)
-- [YAML file by @Winson-030](https://github.com/Winson-030/dify-kubernetes)
-- [YAML file by @wyy-holding](https://github.com/wyy-holding/dify-k8s)
-- [🚀 NEW! YAML files (Supports Dify v1.6.0) by @Zhoneym](https://github.com/Zhoneym/DifyAI-Kubernetes)
+What this does:
 
-#### Using Terraform for Deployment
+- Builds Dify (API, Web, Worker)
+- Builds and starts Postgres + Redis
+- Builds and starts the custom `video-extractor` microservice
+- Launches everything in Docker using `docker/docker-compose.yaml`
 
-Deploy Dify to Cloud Platform with a single click using [terraform](https://www.terraform.io/)
+Check container status:
 
-##### Azure Global
+```bash
+make ps
+```
 
-- [Azure Terraform by @nikawang](https://github.com/nikawang/dify-azure-terraform)
+View logs:
 
-##### Google Cloud
+```bash
+make logs
+```
 
-- [Google Cloud Terraform by @sotazum](https://github.com/DeNA/dify-google-cloud-terraform)
+(Press `Ctrl+C` to stop log output.)
 
-#### Using AWS CDK for Deployment
+---
 
-Deploy Dify to AWS with [CDK](https://aws.amazon.com/cdk/)
+## ✅ Step 3 — Open the Dify UI
 
-##### AWS
+Open your browser and go to:
 
-- [AWS CDK by @KevinZhao (EKS based)](https://github.com/aws-samples/solution-for-deploying-dify-on-aws)
-- [AWS CDK by @tmokmss (ECS based)](https://github.com/aws-samples/dify-self-hosted-on-aws)
+- http://localhost:3000
 
-#### Using Alibaba Cloud Computing Nest
+Log in using credentials from `.env`:
 
-Quickly deploy Dify to Alibaba cloud with [Alibaba Cloud Computing Nest](https://computenest.console.aliyun.com/service/instance/create/default?type=user&ServiceName=Dify%E7%A4%BE%E5%8C%BA%E7%89%88)
+- Email: `INIT_EMAIL`
+- Password: `INIT_PASSWORD`
 
-#### Using Alibaba Cloud Data Management
+Dify will automatically initialize the admin user using these values.
 
-One-Click deploy Dify to Alibaba Cloud with [Alibaba Cloud Data Management](https://www.alibabacloud.com/help/en/dms/dify-in-invitational-preview/)
+---
 
-#### Deploy to AKS with Azure Devops Pipeline
+## ✅ Step 4 — Import the OSCE Workflow
 
-One-Click deploy Dify to AKS with [Azure Devops Pipeline Helm Chart by @LeoZhang](https://github.com/Ruiruiz30/Dify-helm-chart-AKS)
+Inside the Dify UI:
 
-## Contributing
+1. Go to **Workflow** (or **Apps**).
+2. Click **Import**.
+3. Select the file:
 
-For those who'd like to contribute code, see our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
-At the same time, please consider supporting Dify by sharing it on social media and at events and conferences.
+   ```text
+   workflows/MVP-complete.yml
+   ```
 
-> We are looking for contributors to help translate Dify into languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n-config/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
+You should now see the full MEDAI/OSCE pipeline:
 
-## Community & contact
+- Video ingestion node
+- HTTP node calling `video-extractor`
+- ASR node
+- Rubric evaluation nodes
+- Final grading flow
 
-- [GitHub Discussion](https://github.com/langgenius/dify/discussions). Best for: sharing feedback and asking questions.
-- [GitHub Issues](https://github.com/langgenius/dify/issues). Best for: bugs you encounter using Dify.AI, and feature proposals. See our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md).
-- [Discord](https://discord.gg/FngNHpbcY7). Best for: sharing your applications and hanging out with the community.
-- [X(Twitter)](https://twitter.com/dify_ai). Best for: sharing your applications and hanging out with the community.
+This completes the OSCE workflow setup.
 
-**Contributors**
+---
 
-<a href="https://github.com/langgenius/dify/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=langgenius/dify" />
-</a>
+## ✅ Step 5 — Test the Video Extractor Service
 
-## Star history
+From your terminal:
 
-[![Star History Chart](https://api.star-history.com/svg?repos=langgenius/dify&type=Date)](https://star-history.com/#langgenius/dify&Date)
+```bash
+curl http://localhost:8000/health
+```
 
-## Security disclosure
+Or in a browser:
 
-To protect your privacy, please avoid posting security issues on GitHub. Instead, report issues to security@dify.ai, and our team will respond with detailed answer.
+- http://localhost:8000/health
 
-## License
+Expected output:
 
-This repository is licensed under the [Dify Open Source License](LICENSE), based on Apache 2.0 with additional conditions.
+```json
+{ "status": "ok" }
+```
+
+### 🧠 How it works inside the workflow
+
+Dify’s ingestion node `POST`s video bytes to:
+
+```text
+http://video-extractor:8000/extract
+```
+
+Docker’s internal DNS automatically resolves `video-extractor`.
+
+---
+
+## 🔵 Stopping & Resetting the System
+
+Stop Dify + `video-extractor` + all backing services:
+
+```bash
+make down
+```
+
+Completely reset your Docker environment (optional):
+
+```bash
+docker system prune -a
+docker volume prune
+```
+
+Running `make up` afterward will rebuild everything cleanly.
+
+---
+
+## 🎥 How the Video Extractor Works (High-Level)
+
+The microservice performs:
+
+### ▶ Video → Frames
+
+Extracts frames at a configurable FPS or interval.
+
+### ▶ Video → WAV Audio
+
+Converts video audio into `.wav` suitable for ASR.
+
+### ▶ JSON Response Back to Dify
+
+Example:
+
+```json
+{
+  "frames_dir": "/shared/frames/video123/",
+  "audio_path": "/shared/audio/video123.wav",
+  "num_frames": 3421
+}
+```
+
+Downstream nodes use these paths for:
+
+- ASR
+- Captioning
+- Rubric scoring
+- Final grading
+
+All integration is defined in `workflows/MVP-complete.yml`.
+
+---
+
+## 📦 Makefile Commands (Summary)
+
+```bash
+make up                        # Start the full stack (Dify + microservice)
+make down                      # Stop everything + remove volumes
+make logs                      # Stream logs from all services
+make ps                        # Show container status
+make rebuild-video-extractor   # Rebuild only the microservice
+make rebuild-api               # Rebuild only the Dify API (optional)
+```
+
+---
+
+## 🛡️ Security Notes
+
+- Do **NOT** commit API keys or secrets.
+- `.env` is strictly ignored by Git.
+- Workflow YAML files should contain only placeholders, never real keys.
+- GitHub push protection is enabled on this repository.
+
+If a push is rejected:
+
+1. Open the file and remove the secret.
+2. Amend your commit:
+
+   ```bash
+   git commit --amend --no-edit
+   ```
+
+3. Push again:
+
+   ```bash
+   git push --force
+   ```
+
+4. Rotate the exposed key in your provider dashboard.
+
+---
+
+## 🧪 Troubleshooting
+
+### ❌ “Cannot connect to video-extractor”
+
+Check logs:
+
+```bash
+docker compose -f docker/docker-compose.yaml logs video-extractor
+```
+
+Common issues:
+
+- Missing dependencies in the microservice
+- Exceptions in `main.py`
+- Rare port conflicts
+
+---
+
+### ❌ UI loads blank
+
+Usually caused by stale containers:
+
+```bash
+make down
+make up
+```
+
+Then reload: http://localhost:3000
+
+---
+
+### ❌ Workflow import fails
+
+Confirm:
+
+- You used the file: `workflows/MVP-complete.yml`
+- There are no secrets in the YAML
+- The Dify version matches (this fork is aligned)
+
+---
+
+## 🤝 Contributing (Internal Team)
+
+1. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/my-change
+   ```
+
+2. Implement & test your changes:
+
+   ```bash
+   make up
+   make logs
+   ```
+
+3. Ensure no secrets are committed.
+4. Push your branch & open a PR into `main`.
+
+All MEDAI/OSCE development should stay inside this repository.
