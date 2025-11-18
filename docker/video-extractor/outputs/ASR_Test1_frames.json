@@ -1,0 +1,17 @@
+[
+  "http://video-extractor:8000/static/ASR_Test1_0.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_60.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_120.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_180.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_240.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_300.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_360.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_420.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_480.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_540.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_600.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_660.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_720.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_780.jpg",
+  "http://video-extractor:8000/static/ASR_Test1_840.jpg"
+]
