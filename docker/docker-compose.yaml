@@ -582,7 +582,7 @@ services:
   # ----------------------------------------------------------------
   video-extractor:
     build:
-      context: /Users/vittoriacicalese/Documents/dockerized_http_microservice
+      context: ./video-extractor
       dockerfile: Dockerfile
     container_name: video-extractor
     restart: unless-stopped
