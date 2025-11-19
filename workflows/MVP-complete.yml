@@ -1,0 +1,1741 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: MVP-complete
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.2.6@e2665624a156f52160927bceac9e169bd7e5ae6b936ae82575e14c90af390e6e
+    version: null
+kind: app
+version: 0.4.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 500
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1756159928827-source-1756163885602-target
+      selected: false
+      source: '1756159928827'
+      sourceHandle: source
+      target: '1756163885602'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        sourceType: iteration-start
+        targetType: code
+      id: 1756163885602start-source-1756164538451-target
+      selected: false
+      source: 1756163885602start
+      sourceHandle: source
+      target: '1756164538451'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: code
+      id: 1756163885602-source-1756170486627-target
+      selected: false
+      source: '1756163885602'
+      sourceHandle: source
+      target: '1756170486627'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1756170486627-source-1756170856500-target
+      selected: false
+      source: '1756170486627'
+      sourceHandle: source
+      target: '1756170856500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1756170856500-source-1756171246309-target
+      selected: false
+      source: '1756170856500'
+      sourceHandle: source
+      target: '1756171246309'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        sourceType: llm
+        targetType: code
+      id: 1756165256323-source-1756178388214-target
+      selected: false
+      source: '1756165256323'
+      sourceHandle: source
+      target: '1756178388214'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        sourceType: code
+        targetType: code
+      id: 1756178388214-source-1756170033635-target
+      selected: false
+      source: '1756178388214'
+      sourceHandle: source
+      target: '1756170033635'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        sourceType: code
+        targetType: code
+      id: 1756164538451-source-1758596033815-target
+      selected: false
+      source: '1756164538451'
+      sourceHandle: source
+      target: '1758596033815'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        sourceType: code
+        targetType: llm
+      id: 1758596033815-source-1756165256323-target
+      selected: false
+      source: '1758596033815'
+      sourceHandle: source
+      target: '1756165256323'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1760901931480-source-1760902452394-target
+      selected: false
+      source: '1760901931480'
+      sourceHandle: source
+      target: '1760902452394'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1760902452394-source-1756159928827-target
+      selected: false
+      source: '1760902452394'
+      sourceHandle: source
+      target: '1756159928827'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: http-request
+      id: 1756158961317-source-1759006986494-target
+      selected: false
+      source: '1756158961317'
+      sourceHandle: source
+      target: '1759006986494'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1759006986494-source-1759007037395-target
+      selected: false
+      source: '1759006986494'
+      sourceHandle: source
+      target: '1759007037395'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1759007037395-source-1760255020414-target
+      source: '1759007037395'
+      sourceHandle: source
+      target: '1760255020414'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1759007037395-source-1760296205535-target
+      source: '1759007037395'
+      sourceHandle: source
+      target: '1760296205535'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1760900115479'
+        sourceType: iteration-start
+        targetType: http-request
+      id: 1760900115479start-source-1760908898725-target
+      source: 1760900115479start
+      sourceHandle: source
+      target: '1760908898725'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1760900115479'
+        sourceType: http-request
+        targetType: llm
+      id: 1760908898725-source-1760908934229-target
+      source: '1760908898725'
+      sourceHandle: source
+      target: '1760908934229'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1760296205535-source-1760900115479-target
+      source: '1760296205535'
+      sourceHandle: source
+      target: '1760900115479'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: document-extractor
+      id: 1760900115479-source-1760901931480-target
+      source: '1760900115479'
+      sourceHandle: source
+      target: '1760901931480'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1760255020414-source-1756159928827-target
+      source: '1760255020414'
+      sourceHandle: source
+      target: '1756159928827'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: start
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - video
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: video_file
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: video_file
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: rubric_pdf
+          max_length: 48
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: rubric_pdf
+      height: 114
+      id: '1756158961317'
+      position:
+        x: -1234.6721845060865
+        y: 54.324536916592145
+      positionAbsolute:
+        x: -1234.6721845060865
+        y: 54.324536916592145
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(\n    threshholds = 0.9,\n    video_id=None,\n    rubric=None,\
+          \               # may be JSON string | list[str] | list[dict] | dict\n \
+          \   caption_records=None,      # optional: [] or JSON string\n    asr_segments=None,\n\
+          \    events=None,\n    vlm_events=None,\n    thresholds=None,          \
+          \ # dict or JSON string\n    **kwargs\n):\n    \"\"\"\n    Consolidates\
+          \ input data types. Canonicalizes:\n      - rubric -> list[dict] (objects)\n\
+          \      - captions -> list[dict]\n      - thresholds -> dict\n    Emits:\n\
+          \      - norm (Object)\n      - rubric (Array[Object])  <-- for for_each\n\
+          \      - thresholds (Object)     <-- NEW top-level output for easy binding\n\
+          \      - video_id (String)       <-- optional convenience passthrough\n\
+          \    \"\"\"\n    import json, re\n\n    # ---------- generic helpers ----------\n\
+          \    def parse_json_maybe(x):\n        if x is None:\n            return\
+          \ None\n        if isinstance(x, (list, dict)):\n            return x\n\
+          \        if isinstance(x, (str, bytes)):\n            s = x.decode(\"utf-8\"\
+          , \"ignore\") if isinstance(x, (bytes, bytearray)) else x\n            s\
+          \ = s.strip()\n            if not s:\n                return None\n    \
+          \        # try whole string first\n            try:\n                return\
+          \ json.loads(s)\n            except Exception:\n                pass\n \
+          \           # try to find the largest JSON block inside\n            m =\
+          \ re.findall(r'(\\{.*?\\}|\\[.*?\\])', s, flags=re.S)\n            for cand\
+          \ in sorted(m, key=len, reverse=True):\n                try:\n         \
+          \           return json.loads(cand)\n                except Exception:\n\
+          \                    continue\n            return None\n        return None\n\
+          \n    def as_list(x):\n        v = parse_json_maybe(x)\n        if v is\
+          \ None:\n            # allow raw strings as a single-element list\n    \
+          \        return [] if x is None else ([x] if isinstance(x, str) else [])\n\
+          \        return v if isinstance(v, list) else [v]\n\n    def as_dict(x):\n\
+          \        v = parse_json_maybe(x)\n        return v if isinstance(v, dict)\
+          \ else {}\n\n    def sort_by_start(x):\n        try:\n            return\
+          \ float(x.get(\"start_s\", x.get(\"t\", 0.0)))\n        except Exception:\n\
+          \            return 0.0\n\n    # ---------- rubric normalization ----------\n\
+          \    def to_str_list(val):\n        arr = as_list(val)\n        out = []\n\
+          \        for it in arr:\n            if isinstance(it, str):\n         \
+          \       if it.strip():\n                    out.append(it.strip())\n   \
+          \         elif isinstance(it, dict):\n                lab = it.get(\"label\"\
+          ) or it.get(\"name\") or it.get(\"title\")\n                if lab:\n  \
+          \                  out.append(str(lab).strip())\n        return out\n\n\
+          \    def normalize_window(win):\n        if win is None:\n            return\
+          \ None\n        if isinstance(win, dict) and {\"start\",\"end\"} <= set(win.keys()):\n\
+          \            try:\n                a = float(win[\"start\"]); b = float(win[\"\
+          end\"])\n                return {\"start\": min(a,b), \"end\": max(a,b)}\n\
+          \            except Exception:\n                return None\n        if\
+          \ isinstance(win, (list, tuple)) and len(win) == 2:\n            try:\n\
+          \                a = float(win[0]); b = float(win[1])\n                return\
+          \ {\"start\": min(a,b), \"end\": max(a,b)}\n            except Exception:\n\
+          \                return None\n        return None\n\n    def to_list_of_str(x):\n\
+          \        if x is None:\n            return []\n        if isinstance(x,\
+          \ list):\n            return [str(t).strip() for t in x if str(t).strip()]\n\
+          \        if isinstance(x, str):\n            parts = re.split(r'[;,|/]',\
+          \ x)\n            return [p.strip() for p in parts if p.strip()]\n     \
+          \   return []\n\n    def normalize_rubric(val):\n        parsed = parse_json_maybe(val)\n\
+          \        if isinstance(parsed, list):\n            items = parsed\n    \
+          \    elif isinstance(parsed, dict):\n            for k in (\"rubric\", \"\
+          checklist\", \"items\", \"rows\"):\n                v = parsed.get(k)\n\
+          \                if isinstance(v, list):\n                    items = v\n\
+          \                    break\n            else:\n                items = [parsed]\n\
+          \        else:\n            items = to_str_list(val)\n\n        out = []\n\
+          \        for i, it in enumerate(items):\n            if isinstance(it, dict):\n\
+          \                o = dict(it)\n                rid = o.get(\"id\") or o.get(\"\
+          code\") or o.get(\"key\") or f\"R{i+1}\"\n                lab = o.get(\"\
+          label\") or o.get(\"title\") or o.get(\"name\") or f\"Item {i+1}\"\n   \
+          \             must = bool(o.get(\"must\", o.get(\"required\", False)))\n\
+          \                pts = o.get(\"points\", o.get(\"score\", o.get(\"max_points\"\
+          )))\n                try:\n                    pts = float(pts) if pts is\
+          \ not None else None\n                except Exception:\n              \
+          \      pts = None\n                win = o.get(\"window_s\") or o.get(\"\
+          window\")\n                ne  = o.get(\"near_event\")\n\n             \
+          \   rec = {\n                    \"id\": str(rid).strip(),\n           \
+          \         \"label\": str(lab).strip(),\n                    \"must\": must,\n\
+          \                    \"points\": pts,\n                    \"terms\": to_list_of_str(o.get(\"\
+          terms\")),\n                    \"hints\": to_list_of_str(o.get(\"hints\"\
+          ) or o.get(\"examples\")),\n                    \"window_s\": normalize_window(win),\n\
+          \                    \"near_event\": None,\n                    \"notes\"\
+          : (str(o.get(\"notes\")).strip() if o.get(\"notes\") else None),\n     \
+          \           }\n                if isinstance(ne, dict) and \"label\" in\
+          \ ne:\n                    within = ne.get(\"within_s\", ne.get(\"within\"\
+          , 0))\n                    try:\n                        within = float(within\
+          \ or 0)\n                    except Exception:\n                       \
+          \ within = 0.0\n                    direction = ne.get(\"direction\")\n\
+          \                    if direction not in (\"before\",\"after\", None):\n\
+          \                        direction = None\n                    rec[\"near_event\"\
+          ] = {\n                        \"label\": str(ne.get(\"label\")),\n    \
+          \                    \"within_s\": within,\n                        \"direction\"\
+          : direction\n                    }\n                out.append(rec)\n  \
+          \          elif isinstance(it, str) and it.strip():\n                out.append({\n\
+          \                    \"id\": f\"R{i+1}\",\n                    \"label\"\
+          : it.strip(),\n                    \"must\": False,\n                  \
+          \  \"points\": None,\n                    \"terms\": [],\n             \
+          \       \"hints\": [],\n                    \"window_s\": None,\n      \
+          \              \"near_event\": None,\n                    \"notes\": None\n\
+          \                })\n        return out\n\n    # ---------- captions normalization\
+          \ ----------\n    def normalize_captions(val):\n        arr = as_list(val)\n\
+          \        out = []\n        for c in arr:\n            if not isinstance(c,\
+          \ dict):\n                continue\n            rec = {\n              \
+          \  \"index\": c.get(\"index\"),\n                \"caption\": (c.get(\"\
+          caption\") or \"\").strip()\n            }\n            if \"url\" in c:\
+          \ rec[\"url\"] = c[\"url\"]\n            if \"t_s\" in c: rec[\"t_s\"] =\
+          \ c[\"t_s\"]\n            out.append(rec)\n\n        def cap_key(x):\n \
+          \           if x.get(\"index\") is not None:\n                try: return\
+          \ (0, int(x[\"index\"]))\n                except: return (0, 0)\n      \
+          \      try: return (1, float(x.get(\"t_s\", 0.0)))\n            except:\
+          \ return (1, 0.0)\n        out.sort(key=cap_key)\n\n        idx_map = {}\n\
+          \        for c in out:\n            idx = c.get(\"index\")\n           \
+          \ if idx is not None and idx not in idx_map:\n                idx_map[idx]\
+          \ = c\n        return out, idx_map\n\n    # ---------- coerce everything\
+          \ ----------\n    rubric_list     = normalize_rubric(rubric)\n    captions_list,\
+          \ captions_idx = normalize_captions(caption_records)\n    asr_sorted   \
+          \   = sorted(as_list(asr_segments), key=sort_by_start)\n    events_sorted\
+          \   = sorted(as_list(events),       key=sort_by_start)\n    vlm_sorted \
+          \     = sorted(as_list(vlm_events),   key=sort_by_start)\n    thresholds_dict\
+          \ = as_dict(thresholds)\n\n    # quick event index by label\n    event_index\
+          \ = {}\n    for ev in events_sorted:\n        label = ev.get(\"label\",\
+          \ \"_\")\n        event_index.setdefault(label, []).append(ev)\n\n    norm\
+          \ = {\n        \"video_id\": video_id,\n        \"rubric\": rubric_list,\n\
+          \        \"captions\": captions_list,\n        \"captions_index_by_frame\"\
+          : captions_idx,\n        \"asr_segments\": asr_sorted,\n        \"events\"\
+          : events_sorted,\n        \"vlm_events\": vlm_sorted,\n        \"event_index\"\
+          : event_index,\n        \"thresholds\": thresholds_dict,\n    }\n\n    #\
+          \ ALWAYS return all declared outputs with correct types\n    return {\n\
+          \        \"norm\": norm,                    # Object\n        \"rubric\"\
+          : rubric_list,           # Array\n        \"thresholds\": thresholds_dict\
+          \   # Object  <-- NEW\n        \n    }"
+        code_language: python3
+        desc: 'Purpose: sort by time, coerce nulls to [], build quick indexes by label.'
+        outputs:
+          norm:
+            children: null
+            type: object
+          rubric:
+            children: null
+            type: array[object]
+          thresholds:
+            children: null
+            type: object
+        selected: false
+        title: normalize_inputs
+        type: code
+        variables:
+        - value_selector:
+          - '1756162641332'
+          - video_id
+          value_type: string
+          variable: video_id
+        - value_selector:
+          - '1760902452394'
+          - rubric_items
+          value_type: array[string]
+          variable: rubric
+        - value_selector:
+          - '1762000000001'
+          - asr_segments
+          value_type: array[object]
+          variable: asr_segments
+        - value_selector:
+          - '1756162641332'
+          - events
+          value_type: array[object]
+          variable: events
+        - value_selector:
+          - '1756162641332'
+          - vlm_events
+          value_type: array[object]
+          variable: vlm_events
+        - value_selector:
+          - '1760900115479'
+          - output
+          value_type: array[object]
+          variable: caption_records
+      height: 96
+      id: '1756159928827'
+      position:
+        x: 1571.0207487948942
+        y: 104.80769069006425
+      positionAbsolute:
+        x: 1571.0207487948942
+        y: 104.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        height: 516
+        is_parallel: false
+        iterator_input_type: array[object]
+        iterator_selector:
+        - '1756159928827'
+        - rubric
+        output_selector:
+        - '1756170033635'
+        - item_result
+        output_type: array[object]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1756163885602start
+        title: for_each_rubric_item
+        type: iteration
+        width: 449
+      height: 516
+      id: '1756163885602'
+      position:
+        x: 1891.9844635762092
+        y: 104.80769069006425
+      positionAbsolute:
+        x: 1891.9844635762092
+        y: 104.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 449
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1756163885602start
+      parentId: '1756163885602'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1915.9844635762092
+        y: 172.80769069006425
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        code: "def main(item: dict,\n         norm: dict,\n         thresholds: dict\
+          \ = None,\n         max_asr_hits: int = 50,\n         max_event_hits: int\
+          \ = 50) -> dict:\n    \"\"\"\n    Emits:\n      - evidence_candidates: [{start_s,\
+          \ end_s, source, text, rationale?, label?, delta_to_anchor_s?}]\n      -\
+          \ signals: debug counters\n    \"\"\"\n    import re\n\n    # ----------\
+          \ unpack normalized inputs ----------\n    asr = list(norm.get(\"asr_segments\"\
+          ) or [])\n    events = list(norm.get(\"events\") or [])\n    vlm_events\
+          \ = list(norm.get(\"vlm_events\") or [])\n    event_index = dict(norm.get(\"\
+          event_index\") or {})\n\n    # ---------- normalize rubric item ----------\n\
+          \    raw_hints = [h.strip() for h in (item.get(\"hints\") or []) if isinstance(h,\
+          \ str) and h.strip()]\n    terms = item.get(\"terms\") or raw_hints or []\n\
+          \    window = item.get(\"window\")  # list [start,end] or None\n\n    #\
+          \ allow both formats; judge prefers object form\n    if item.get(\"window_s\"\
+          ):\n        window_s = {\"start\": float(item[\"window_s\"][\"start\"]),\
+          \ \"end\": float(item[\"window_s\"][\"end\"])}\n    elif isinstance(window,\
+          \ (list, tuple)) and len(window) == 2:\n        window_s = {\"start\": float(window[0]),\
+          \ \"end\": float(window[1])}\n    else:\n        window_s = None\n\n   \
+          \ near = item.get(\"near_event\")  # optional\n\n    # ---------- helpers\
+          \ ----------\n    def overlaps_inclusive(start_s: float, end_s: float, ws):\n\
+          \        if not ws:\n            return True\n        return (float(start_s)\
+          \ <= ws[\"end\"]) and (float(end_s) >= ws[\"start\"])\n\n    def norm_text(s:\
+          \ str) -> str:\n        s = (s or \"\")\n        s = s.lower()\n       \
+          \ s = s.replace(\"’\",\"'\").replace(\"‘\",\"'\").replace(\"“\",'\"').replace(\"\
+          ”\",'\"')\n        s = re.sub(r\"\\s+\", \" \", s)\n        return s\n\n\
+          \    def compile_hint_pattern(h: str):\n        tokens = re.findall(r\"\
+          [a-z0-9']+\", (h or \"\").lower())\n        if not tokens:\n           \
+          \ return None\n        pat = r\"\\b\" + r\"\\W+\".join(map(re.escape, tokens))\
+          \ + r\"\\b\"\n        return re.compile(pat, re.IGNORECASE)\n\n    # Build\
+          \ patterns\n    patterns, terms_used = [], []\n    if terms:\n        for\
+          \ t in terms:\n            p = compile_hint_pattern(t)\n            if p:\n\
+          \                patterns.append(p)\n                terms_used.append(t)\n\
+          \        terms_source = \"terms\"\n    else:\n        lbl = (item.get(\"\
+          label\") or \"\").lower()\n        kw = sorted(set(re.findall(r\"[a-z]{4,}\"\
+          , lbl)))\n        for t in kw:\n            patterns.append(re.compile(r\"\
+          \\b\" + re.escape(t) + r\"\\b\", re.IGNORECASE))\n        terms_used = kw\n\
+          \        terms_source = \"label_keywords\"\n\n    asr_min_ratio = float((thresholds\
+          \ or {}).get(\"asr_match_min\", 0.25))\n\n    # ---------- 1) ASR hits ----------\n\
+          \    evidence_candidates, checked = [], 0\n    for seg in asr:\n       \
+          \ start = float(seg.get(\"start_s\", seg.get(\"t\", 0.0)))\n        end\
+          \   = float(seg.get(\"end_s\", seg.get(\"t_end\", start)))\n        if not\
+          \ overlaps_inclusive(start, end, window_s):\n            continue\n\n  \
+          \      text = seg.get(\"text\") or seg.get(\"transcript\") or seg.get(\"\
+          content\") or \"\"\n        low  = norm_text(text)\n        checked += 1\n\
+          \n        matches = [p for p in patterns if p.search(low)]\n        ratio\
+          \ = len(matches) / max(1, len(patterns))\n        if matches and ratio >=\
+          \ asr_min_ratio:\n            rationale = f\"{len(matches)}/{len(patterns)}\
+          \ term patterns matched (>= {asr_min_ratio:.2f})\"\n            evidence_candidates.append({\n\
+          \                \"start_s\": start,\n                \"end_s\": end,\n\
+          \                \"source\": \"ASR\",\n                \"text\": text,\n\
+          \                \"rationale\": rationale\n            })\n            if\
+          \ len([e for e in evidence_candidates if e[\"source\"] == \"ASR\"]) >= int(max_asr_hits):\n\
+          \                break\n\n    # ---------- near-event helpers ----------\n\
+          \    anchors, within, direction = [], 0.0, None\n    if isinstance(near,\
+          \ dict):\n        anchors   = list(event_index.get(near.get(\"label\"),\
+          \ []) or [])\n        within    = float(near.get(\"within_s\", 0) or 0)\n\
+          \        direction = near.get(\"direction\")\n\n    def matches_anchor(ev_start:\
+          \ float):\n        if not anchors or within <= 0:\n            return True,\
+          \ None\n        best = None\n        for a in anchors:\n            anc\
+          \ = float(a.get(\"start_s\", 0))\n            if direction == \"before\"\
+          :\n                d = anc - ev_start if ev_start <= anc else float(\"inf\"\
+          )\n            elif direction == \"after\":\n                d = ev_start\
+          \ - anc if ev_start >= anc else float(\"inf\")\n            else:\n    \
+          \            d = abs(ev_start - anc)\n            if d <= within:\n    \
+          \            best = d if best is None else min(best, d)\n        return\
+          \ (best is not None), (None if best is None else round(best, 3))\n\n   \
+          \ # ---------- 2) Event/VLM hits ----------\n    ev_count = 0\n    for ev\
+          \ in (events + vlm_events):\n        s = float(ev.get(\"start_s\", 0));\
+          \ e = float(ev.get(\"end_s\", s))\n        if not overlaps_inclusive(s,\
+          \ e, window_s):\n            continue\n        ok, delta = matches_anchor(s)\n\
+          \        if not ok:\n            continue\n        src = ev.get(\"source\"\
+          ) or (\"VLM\" if ev in vlm_events else \"Event\")\n        text = ev.get(\"\
+          text\") or ev.get(\"label\") or \"\"\n        payload = {\"start_s\": s,\
+          \ \"end_s\": e, \"source\": src, \"text\": text}\n        if ev.get(\"label\"\
+          ): payload[\"label\"] = ev.get(\"label\")\n        if delta is not None:\
+          \ payload[\"delta_to_anchor_s\"] = delta\n        evidence_candidates.append(payload)\n\
+          \        ev_count += 1\n        if ev_count >= int(max_event_hits):\n  \
+          \          break\n\n    # ---------- 3) Deduplicate ----------\n    def\
+          \ key(h):\n        return (round(float(h[\"start_s\"]), 2),\n          \
+          \      round(float(h[\"end_s\"]), 2),\n                h.get(\"source\"\
+          ),\n                (h.get(\"text\") or \"\")[:64])\n\n    deduped, seen\
+          \ = [], set()\n    for h in evidence_candidates:\n        k = key(h)\n \
+          \       if k not in seen:\n            seen.add(k)\n            deduped.append(h)\n\
+          \n    signals = {\n        \"asr_segments_checked\": checked,\n        \"\
+          asr_hits\": len([e for e in deduped if e[\"source\"] == \"ASR\"]),\n   \
+          \     \"event_hits\": len([e for e in deduped if e[\"source\"] in (\"Event\"\
+          ,\"VLM\")]),\n        \"terms_source\": terms_source,\n        \"terms_used\"\
+          : terms_used[:20],\n        \"anchors_count\": len(anchors),\n        \"\
+          window\": None if window_s is None else [window_s[\"start\"], window_s[\"\
+          end\"]]\n    }\n\n    # RETURN EXACTLY the declared outputs\n    return\
+          \ {\n        \"evidence_candidates\": deduped,\n        \"signals\": signals\n\
+          \    }\n"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        outputs:
+          evidence_candidates:
+            children: null
+            type: array[object]
+          signals:
+            children: null
+            type: object
+        selected: false
+        title: find_candidates_for_item
+        type: code
+        variables:
+        - value_selector:
+          - '1756163885602'
+          - item
+          value_type: object
+          variable: item
+        - value_selector:
+          - '1756159928827'
+          - norm
+          value_type: object
+          variable: norm
+        - value_selector:
+          - '1756159928827'
+          - thresholds
+          value_type: object
+          variable: thresholds
+      height: 52
+      id: '1756164538451'
+      parentId: '1756163885602'
+      position:
+        x: 105.1026898796963
+        y: 65
+      positionAbsolute:
+        x: 1997.0871534559055
+        y: 169.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1760255020414'
+          - transcript
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        model:
+          completion_params:
+            temperature: 0
+            top_p: 0.01
+          mode: chat
+          name: gpt-5-chat-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: e4788033-eb32-432b-95a4-fbd472b859b3
+          role: system
+          text: "You are an OSCE rubric evaluator. You receive:\n1) a single rubric\
+            \ item (\"item\"),\n2) pre-filtered evidence (\"evidence_candidates\"\
+            ).\n\nReturn ONE JSON object ONLY between <OSCE_JSON> and </OSCE_JSON>,\
+            \ schema:\n{\n  \"rubric_id\": \"R#\",\n  \"status\": \"done\" | \"not_done\"\
+            \ | \"uncertain\",\n  \"confidence\": number,\n  \"evidence\": [\n   \
+            \ {\"start_s\": number, \"end_s\": number, \"source\": \"ASR\" | \"Event\"\
+            \ | \"VLM\" | \"RAG\", \"rationale\"?: string, \"label\"?: string, \"\
+            delta_to_anchor_s\"?: number}\n  ],\n  \"notes\": string\n}\n\nRules:\n\
+            - Use item.id as rubric_id.\n- Enforce inclusive time windows.\n- Match\
+            \ ANY of item.terms/hints in candidate.text.\n- No text outside the JSON.\
+            \ Do NOT return arrays, code fences, or markdown.\nIf unsure, output {\"\
+            rubric_id\": item.id, \"status\":\"uncertain\", \"confidence\":0.1, \"\
+            evidence\":[], \"notes\":\"insufficient\"}.\n{{#1760255020414.transcript#}}\
+            \ {{#context#}}"
+        - id: fe2bf9e0-4c10-4d7f-bf49-e8af8d96be70
+          role: user
+          text: "{\n  \"item\": {{ {{#1756163885602.item#}} | to_json }},\n  \"evidence_candidates\"\
+            : {{ {{#1758596033815.evidence_texts#}}| to_json }}, \n  \"thresholds\"\
+            : {{ / | default({}) | to_json }}\n}\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: false
+          retry_interval: 1000
+        selected: false
+        structured_output:
+          schema:
+            properties:
+              confidence:
+                maximum: 1
+                minimum: 0
+                type: number
+              evidence:
+                items:
+                  properties:
+                    delta_to_anchor_s:
+                      type: number
+                    end_s:
+                      type: number
+                    label:
+                      type: string
+                    rationale:
+                      type: string
+                    source:
+                      enum:
+                      - ASR
+                      - VLM
+                      - Event
+                      - RAG
+                      type: string
+                    start_s:
+                      type: number
+                  required:
+                  - start_s
+                  - end_s
+                  - source
+                  type: object
+                type: array
+              notes:
+                type: string
+              rubric_id:
+                type: string
+              status:
+                enum:
+                - done
+                - not_done
+                - uncertain
+                type: string
+            required:
+            - rubric_id
+            - status
+            - confidence
+            type: object
+        structured_output_enabled: false
+        title: judge_item
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1756165256323'
+      parentId: '1756163885602'
+      position:
+        x: 107.44068115170569
+        y: 253.26036272405196
+      positionAbsolute:
+        x: 1999.4251447279148
+        y: 358.0680534141162
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(item: dict, judgement: dict, signals: dict = None, rejudgement:\
+          \ dict = None) -> dict:\n    def score(j):\n        if not isinstance(j,\
+          \ dict): return -1.0\n        try: return float(j.get(\"confidence\", 0))\n\
+          \        except Exception: return 0.0\n\n    # Pick the better of judge\
+          \ vs rejudge if both provided\n    choice = judgement or {}\n    if rejudgement:\n\
+          \        j1, j2 = judgement or {}, rejudgement\n        # Prefer (a) non-uncertain\
+          \ over uncertain, else (b) higher confidence by ≥ 0.05\n        prefer_j2\
+          \ = (\n            (j1.get(\"status\") == \"uncertain\" and j2.get(\"status\"\
+          ) != \"uncertain\") or\n            (score(j2) > score(j1) + 0.05)\n   \
+          \     )\n        if prefer_j2:\n            choice = j2\n\n    # Ensure\
+          \ rubric_id present\n    out = dict(choice)\n    rid = out.get(\"rubric_id\"\
+          ) or item.get(\"id\") or item.get(\"label\")\n    out[\"rubric_id\"] = rid\n\
+          \n    # Attach debug signals if present (namespaced to avoid polluting scoring)\n\
+          \    if isinstance(signals, dict):\n        out[\"_signals\"] = signals\n\
+          \n    return {\"item_result\": out}\n"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        outputs:
+          item_result:
+            children: null
+            type: object
+        selected: false
+        title: finalize_item_result
+        type: code
+        variables:
+        - value_selector:
+          - '1756163885602'
+          - item
+          value_type: object
+          variable: item
+        - value_selector:
+          - '1756178388214'
+          - judgement
+          value_type: object
+          variable: judgement
+        - value_selector:
+          - '1756164538451'
+          - signals
+          value_type: object
+          variable: signals
+      height: 52
+      id: '1756170033635'
+      parentId: '1756163885602'
+      position:
+        x: 116.01270986289921
+        y: 427.4683149201468
+      positionAbsolute:
+        x: 2007.9971734391083
+        y: 532.2760056102111
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(item_results, video_id, rubric, thresholds):\n    # Defensive\
+          \ copies\n    items = list(item_results or [])\n    rubric_list = list(rubric\
+          \ or [])\n    thr = dict(thresholds or {})\n\n    # Map id -> must for scoring\n\
+          \    id_to_must = {}\n    order_index = {}\n    for idx, r in enumerate(rubric_list):\n\
+          \        rid = r.get(\"id\") or r.get(\"label\")\n        if rid:\n    \
+          \        id_to_must[rid] = bool(r.get(\"must\", True))\n            order_index[rid]\
+          \ = idx\n\n    # Normalize each item_result and count statuses\n    counts\
+          \ = {\"done\":0, \"not_done\":0, \"uncertain\":0}\n    cleaned = []\n  \
+          \  for r in items:\n        if not isinstance(r, dict): \n            continue\n\
+          \        rid = r.get(\"rubric_id\") or r.get(\"id\") or r.get(\"label\"\
+          ) or \"UNKNOWN\"\n        status = r.get(\"status\")\n        if status\
+          \ not in (\"done\",\"not_done\",\"uncertain\"):\n            status = \"\
+          uncertain\"\n        try:\n            conf = float(r.get(\"confidence\"\
+          , 0))\n        except Exception:\n            conf = 0.0\n\n        ev =\
+          \ r.get(\"evidence\") or []\n        # Normalize evidence list minimally\n\
+          \        ev2 = []\n        for e in ev[:3]:\n            if not isinstance(e,\
+          \ dict): \n                continue\n            s = float(e.get(\"start_s\"\
+          , 0))\n            e_end = float(e.get(\"end_s\", s))\n            src =\
+          \ e.get(\"source\") or \"ASR\"\n            obj = {\n                \"\
+          start_s\": s, \"end_s\": e_end, \"source\": src\n            }\n       \
+          \     # Keep optional fields when present\n            if \"rationale\"\
+          \ in e: obj[\"rationale\"] = e[\"rationale\"]\n            if \"label\"\
+          \ in e: obj[\"label\"] = e[\"label\"]\n            if \"delta_to_anchor_s\"\
+          \ in e: obj[\"delta_to_anchor_s\"] = e[\"delta_to_anchor_s\"]\n        \
+          \    ev2.append(obj)\n\n        out = {\n            \"rubric_id\": rid,\n\
+          \            \"status\": status,\n            \"confidence\": round(conf,\
+          \ 3),\n            \"evidence\": ev2,\n            \"notes\": r.get(\"notes\"\
+          ,\"\")\n        }\n        # Keep any debug signals if present\n       \
+          \ if \"_signals\" in r:\n            out[\"_signals\"] = r[\"_signals\"\
+          ]\n\n        counts[status] += 1\n        cleaned.append(out)\n\n    # Sort\
+          \ results by original rubric order\n    def sort_key(x): \n        return\
+          \ order_index.get(x.get(\"rubric_id\"), 10**9)\n    cleaned.sort(key=sort_key)\n\
+          \n    # Score policy:\n    # - By default, score = % of MUST items with\
+          \ status \"done\".\n    # - Optional: pass_cutoff_percent in thresholds\
+          \ for pass/fail.\n    must_ids = [rid for rid, is_must in id_to_must.items()\
+          \ if is_must]\n    must_total = max(1, len(must_ids))\n    must_done = sum(1\
+          \ for r in cleaned if r[\"rubric_id\"] in must_ids and r[\"status\"]==\"\
+          done\")\n    score_percent = round((must_done / must_total) * 100.0, 2)\n\
+          \n    # Optional pass/fail\n    pass_cut = thr.get(\"pass_cutoff_percent\"\
+          )\n    if pass_cut is not None:\n        try:\n            pass_cut = float(pass_cut)\n\
+          \        except Exception:\n            pass_cut = None\n    passed = (score_percent\
+          \ >= pass_cut) if pass_cut is not None else None\n\n    # Coverage: how\
+          \ many items have at least some evidence recorded\n    coverage = sum(1\
+          \ for r in cleaned if r.get(\"evidence\")) / max(1, len(cleaned))\n    coverage\
+          \ = round(coverage * 100.0, 2)\n\n    title = thr.get(\"_rubric_title\"\
+          ) or \"Rubric\"\n\n    report = {\n        \"video_id\": video_id,\n   \
+          \     \"rubric_title\": title,\n        \"summary\": {\n            \"items_total\"\
+          : len(cleaned),\n            \"completed\": counts[\"done\"],\n        \
+          \    \"not_done\": counts[\"not_done\"],\n            \"uncertain\": counts[\"\
+          uncertain\"],\n            \"must_items\": len(must_ids),\n            \"\
+          must_done\": must_done,\n            \"score_percent\": score_percent,\n\
+          \            \"coverage_percent\": coverage,\n            \"pass_cutoff_percent\"\
+          : pass_cut,\n            \"passed\": passed\n        },\n        \"items\"\
+          : cleaned\n    }\n    return {\"report\": report}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          report:
+            children: null
+            type: object
+        selected: false
+        title: build_report_and_score
+        type: code
+        variables:
+        - value_selector:
+          - '1756163885602'
+          - output
+          value_type: array[object]
+          variable: item_results
+        - value_selector:
+          - '1756162641332'
+          - video_id
+          value_type: string
+          variable: video_id
+        - value_selector:
+          - '1756162641332'
+          - rubric
+          value_type: array[object]
+          variable: rubric
+        - value_selector:
+          - '1756162641332'
+          - thresholds
+          value_type: object
+          variable: thresholds
+      height: 52
+      id: '1756170486627'
+      position:
+        x: 2428.3196753843167
+        y: 104.80769069006425
+      positionAbsolute:
+        x: 2428.3196753843167
+        y: 104.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(report):\n    if not isinstance(report, dict):\n        return\
+          \ {\"markdown_report\": \"No report.\"}\n    s = report.get(\"summary\"\
+          , {})\n    lines = []\n    lines.append(f\"# {report.get('rubric_title','Rubric')}\
+          \ – {report.get('video_id','')}\")\n    lines.append(\"\")\n    lines.append(f\"\
+          - Items total: {s.get('items_total',0)}\")\n    lines.append(f\"- Completed:\
+          \ {s.get('completed',0)} | Not done: {s.get('not_done',0)} | Uncertain:\
+          \ {s.get('uncertain',0)}\")\n    lines.append(f\"- MUST items: {s.get('must_items',0)}\
+          \ | MUST done: {s.get('must_done',0)}\")\n    lines.append(f\"- Score: **{s.get('score_percent',0)}%**\"\
+          )\n    if s.get('coverage_percent') is not None:\n        lines.append(f\"\
+          - Evidence coverage: {s.get('coverage_percent',0)}%\")\n    if s.get('pass_cutoff_percent')\
+          \ is not None:\n        outcome = \"✅ PASS\" if s.get('passed') else \"\
+          ❌ FAIL\"\n        lines.append(f\"- Pass cutoff: {s.get('pass_cutoff_percent')}%\
+          \ → {outcome}\")\n    lines.append(\"\\n## Items\")\n    for it in report.get(\"\
+          items\", []):\n        status = it.get(\"status\",\"?\")\n        conf =\
+          \ it.get(\"confidence\",0)\n        rid = it.get(\"rubric_id\",\"?\")\n\
+          \        lines.append(f\"- **{rid}**: {status} (conf {conf})\")\n      \
+          \  ev = it.get(\"evidence\") or []\n        for e in ev[:2]:\n         \
+          \   label = f\" [{e.get('label')}]\" if e.get(\"label\") else \"\"\n   \
+          \         dt = f\", Δ={e.get('delta_to_anchor_s')}s\" if e.get(\"delta_to_anchor_s\"\
+          ) is not None else \"\"\n            lines.append(f\"  - {e.get('source')}{label}\
+          \ {e.get('start_s')}–{e.get('end_s')}{dt}\")\n    return {\"markdown_report\"\
+          : \"\\n\".join(lines)}\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          markdown_report:
+            children: null
+            type: string
+        selected: false
+        title: format_human_report
+        type: code
+        variables:
+        - value_selector:
+          - '1756170486627'
+          - report
+          value_type: object
+          variable: report
+      height: 52
+      id: '1756170856500'
+      position:
+        x: 2736.4969780223964
+        y: 104.80769069006425
+      positionAbsolute:
+        x: 2736.4969780223964
+        y: 104.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756170486627'
+          - report
+          value_type: object
+          variable: report
+        - value_selector:
+          - '1756170856500'
+          - markdown_report
+          value_type: string
+          variable: markdown_report
+        selected: false
+        title: End
+        type: end
+      height: 114
+      id: '1756171246309'
+      position:
+        x: 3039.7818605241255
+        y: 104.80769069006425
+      positionAbsolute:
+        x: 3039.7818605241255
+        y: 104.80769069006425
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(raw: str = \"\",\n         item: dict = None,\n         candidates:\
+          \ list = None,\n         index: int = 0) -> dict:\n    import json, re\n\
+          \n    # -------- derive fallback rubric_id from the passed item or index\
+          \ --------\n    rid = None\n    if isinstance(item, dict):\n        rid\
+          \ = item.get(\"id\") or item.get(\"label\")\n    elif isinstance(item, str):\n\
+          \        rid = item\n    if not rid:\n        try:\n            rid = f\"\
+          R{int(index) + 1}\"\n        except Exception:\n            rid = \"UNKNOWN\"\
+          \n\n    s = (raw or \"\").strip()\n\n    # -------- prefer content between\
+          \ explicit markers (object OR array inside) --------\n    block = \"\"\n\
+          \    m = re.search(r\"<OSCE_JSON>\\s*(.*?)\\s*</OSCE_JSON>\", s, flags=re.S\
+          \ | re.I)\n    if m:\n        block = m.group(1).strip()\n    else:\n  \
+          \      # fallback: first JSON object or array in the text\n        m2 =\
+          \ re.search(r\"(\\{.*\\}|\\[.*\\])\", s, flags=re.S)\n        if m2:\n \
+          \           block = m2.group(1).strip()\n\n    def try_load(payload: str):\n\
+          \        if not payload:\n            return None\n        fixed = payload\n\
+          \        # normalize a few common “smart” quotes characters\n        fixed\
+          \ = fixed.replace(\"“\",\"\\\"\").replace(\"”\",\"\\\"\").replace(\"’\"\
+          ,\"'\")\n        # DO NOT aggressively replace all single quotes; that breaks\
+          \ valid JSON.\n        # Trim stray trailing commas: `, }` or `, ]`\n  \
+          \      fixed = re.sub(r\",\\s*([}\\]])\", r\"\\1\", fixed)\n        try:\n\
+          \            return json.loads(fixed)\n        except Exception:\n     \
+          \       return None\n\n    obj = try_load(block)\n\n    # -------- if still\
+          \ no JSON, produce a safe fallback --------\n    if obj is None:\n     \
+          \   return {\"judgement\": {\n            \"rubric_id\": rid,\n        \
+          \    \"status\": \"uncertain\",\n            \"confidence\": 0.0,\n    \
+          \        \"evidence\": [],\n            \"notes\": \"LLM returned non-JSON;\
+          \ defaulted to uncertain.\"\n        }}\n\n    # -------- if a batch was\
+          \ returned, select only the record for this item.id --------\n    def select_record(o,\
+          \ rubric_id):\n        \"\"\"Return a single decision dict for rubric_id\
+          \ from a batched structure.\"\"\"\n        # {\"evaluations\":[ {...}, {...}\
+          \ ]}\n        if isinstance(o, dict) and \"evaluations\" in o and isinstance(o[\"\
+          evaluations\"], list):\n            for rec in o[\"evaluations\"]:\n   \
+          \             if isinstance(rec, dict) and rec.get(\"rubric_id\") == rubric_id:\n\
+          \                    return rec\n            return None\n        # plain\
+          \ list [ {...}, {...} ]\n        if isinstance(o, list):\n            for\
+          \ rec in o:\n                if isinstance(rec, dict) and rec.get(\"rubric_id\"\
+          ) == rubric_id:\n                    return rec\n            return None\n\
+          \        # already a single object\n        if isinstance(o, dict):\n  \
+          \          # if it's a single object but rubric_id mismatches, still accept\
+          \ (we'll coerce below)\n            return o\n        return None\n\n  \
+          \  rec = select_record(obj, rid)\n    if rec is None:\n        # As a fallback,\
+          \ if the batch didn't include our rubric_id, return uncertain\n        return\
+          \ {\"judgement\": {\n            \"rubric_id\": rid,\n            \"status\"\
+          : \"uncertain\",\n            \"confidence\": 0.0,\n            \"evidence\"\
+          : [],\n            \"notes\": \"Batched output but no matching rubric_id.\"\
+          \n        }}\n\n    # -------- canonicalize fields --------\n    # ensure\
+          \ dict\n    if not isinstance(rec, dict):\n        return {\"judgement\"\
+          : {\n            \"rubric_id\": rid,\n            \"status\": \"uncertain\"\
+          ,\n            \"confidence\": 0.0,\n            \"evidence\": [],\n   \
+          \         \"notes\": \"Parsed non-object after selection.\"\n        }}\n\
+          \n    # rubric id\n    rubric_id = rec.get(\"rubric_id\") or rid\n\n   \
+          \ # status\n    status_raw = str(rec.get(\"status\",\"\")).strip().lower().replace(\"\
+          \ \", \"_\")\n    def canon_status(x: str) -> str:\n        if x in {\"\
+          done\",\"complete\",\"completed\",\"yes\",\"present\",\"satisfied\",\"achieved\"\
+          ,\"performed\"}:\n            return \"done\"\n        if x in {\"not_done\"\
+          ,\"no\",\"absent\",\"missed\",\"omitted\",\"failed\",\"incomplete\"}:\n\
+          \            return \"not_done\"\n        return \"uncertain\"\n    status\
+          \ = canon_status(status_raw)\n\n    # confidence\n    conf = rec.get(\"\
+          confidence\", 0)\n    try:\n        conf = float(conf)\n        if conf\
+          \ > 1.0:  # allow 0-100 inputs\n            conf /= 100.0\n        conf\
+          \ = max(0.0, min(1.0, conf))\n    except Exception:\n        conf = 0.0\n\
+          \n    # evidence\n    ev = rec.get(\"evidence\") or []\n    out_ev = []\n\
+          \    if isinstance(ev, list):\n        for e in ev[:3]:\n            if\
+          \ isinstance(e, dict):\n                try:\n                    s0 = float(e.get(\"\
+          start_s\", 0.0))\n                    e0 = float(e.get(\"end_s\", s0))\n\
+          \                except Exception:\n                    s0, e0 = 0.0, 0.0\n\
+          \                src = e.get(\"source\") or \"ASR\"\n                ne\
+          \ = {\"start_s\": s0, \"end_s\": e0, \"source\": src}\n                if\
+          \ \"rationale\" in e: ne[\"rationale\"] = e[\"rationale\"]\n           \
+          \     if \"label\" in e: ne[\"label\"] = e[\"label\"]\n                if\
+          \ \"delta_to_anchor_s\" in e: ne[\"delta_to_anchor_s\"] = e[\"delta_to_anchor_s\"\
+          ]\n                out_ev.append(ne)\n\n    # Seed minimal evidence if empty\
+          \ but we have candidates (helps traceability)\n    if not out_ev and candidates:\n\
+          \        c0 = candidates[0]\n        try:\n            s0 = float(c0.get(\"\
+          start_s\", 0.0))\n            e0 = float(c0.get(\"end_s\", c0.get(\"start_s\"\
+          , 0.0)))\n        except Exception:\n            s0, e0 = 0.0, 0.0\n   \
+          \     ne = {\"start_s\": s0, \"end_s\": e0, \"source\": c0.get(\"source\"\
+          ,\"ASR\")}\n        if c0.get(\"label\"): ne[\"label\"] = c0[\"label\"]\n\
+          \        if c0.get(\"delta_to_anchor_s\") is not None:\n            ne[\"\
+          delta_to_anchor_s\"] = c0[\"delta_to_anchor_s\"]\n        out_ev.append(ne)\n\
+          \n    out = {\n        \"rubric_id\": rubric_id,\n        \"status\": status,\n\
+          \        \"confidence\": round(conf, 3),\n        \"evidence\": out_ev,\n\
+          \        \"notes\": rec.get(\"notes\", \"\")\n    }\n    return {\"judgement\"\
+          : out}\n"
+        code_language: python3
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        outputs:
+          judgement:
+            children: null
+            type: object
+        selected: false
+        title: parse_judge_output
+        type: code
+        variables:
+        - value_selector:
+          - '1756165256323'
+          - text
+          value_type: string
+          variable: raw
+        - value_selector:
+          - '1756164538451'
+          - evidence_candidates
+          value_type: array[object]
+          variable: candidates
+        - value_selector:
+          - '1756163885602'
+          - item
+          value_type: object
+          variable: item
+        - value_selector:
+          - '1756163885602'
+          - index
+          value_type: number
+          variable: index
+      height: 52
+      id: '1756178388214'
+      parentId: '1756163885602'
+      position:
+        x: 114.96316229130309
+        y: 353.30902234797475
+      positionAbsolute:
+        x: 2006.9476258675122
+        y: 458.116713038039
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "def main(evidence_candidates=None, time_format=\"mm:ss\"):\n    import\
+          \ math\n\n    evidence_candidates = evidence_candidates or []\n\n    def\
+          \ fmt_time(s):\n        s = float(s or 0.0)\n        m = int(s // 60)\n\
+          \        sec = s - m*60\n        # show whole seconds if near integer, else\
+          \ keep 1 decimal\n        if abs(sec - round(sec)) < 1e-3:\n           \
+          \ return f\"{m:02d}:{int(round(sec)):02d}\"\n        else:\n           \
+          \ return f\"{m:02d}:{sec:04.1f}\"\n\n    texts = []\n    for e in evidence_candidates:\n\
+          \        start = fmt_time(e.get(\"start_s\", 0))\n        end   = fmt_time(e.get(\"\
+          end_s\", e.get(\"start_s\", 0)))\n        src   = e.get(\"source\", \"ASR\"\
+          )\n        label = e.get(\"label\")\n        text  = e.get(\"text\", \"\"\
+          ).strip()\n\n        # Build a compact, readable line\n        if label:\n\
+          \            line = f\"[{src} {start}-{end}] {label} :: {text}\"\n     \
+          \   else:\n            line = f\"[{src} {start}-{end}] {text}\"\n\n    \
+          \    texts.append(line)\n\n    return {\"evidence_texts\": texts}\n"
+        code_language: python3
+        desc: transform arr[obj] into arr[str]
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1756163885602'
+        outputs:
+          evidence_texts:
+            children: null
+            type: array[string]
+        selected: false
+        title: transform
+        type: code
+        variables:
+        - value_selector:
+          - '1756164538451'
+          - evidence_candidates
+          value_type: array[object]
+          variable: evidence_candidates
+      height: 80
+      id: '1758596033815'
+      parentId: '1756163885602'
+      position:
+        x: 116.32158994620988
+        y: 158.51933117972885
+      positionAbsolute:
+        x: 2008.306053522419
+        y: 263.3270218697931
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        is_array_file: false
+        selected: false
+        title: Doc Extractor
+        type: document-extractor
+        variable_selector:
+        - '1756158961317'
+        - rubric_pdf
+      height: 92
+      id: '1760901931480'
+      position:
+        x: 1208.3301214962446
+        y: -165.40456803321393
+      positionAbsolute:
+        x: 1208.3301214962446
+        y: -165.40456803321393
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(text: str = \"\") -> dict:\n    \"\"\"\n    Input:\n     \
+          \ text: string (full rubric text from Doc Extractor)\n    Output:\n    \
+          \  {\"rubric_items\": [\"<item 1>\", \"<item 2>\", ...]}\n    \"\"\"\n \
+          \   if not isinstance(text, str) or not text.strip():\n        return {\"\
+          rubric_items\": []}\n\n    # Normalize newlines and spaces\n    clean =\
+          \ text.replace(\"\\r\", \"\\n\").strip()\n    lines = [ln.strip() for ln\
+          \ in clean.split(\"\\n\") if ln.strip()]\n\n    # Optional: filter out section\
+          \ headers that are too short to be actionable\n    rubric_items = [ln for\
+          \ ln in lines if len(ln.split()) > 2]\n\n    return {\"rubric_items\": rubric_items}"
+        code_language: python3
+        outputs:
+          rubric_items:
+            children: null
+            type: array[string]
+        selected: false
+        title: Postprocess Doc Extractor
+        type: code
+        variables:
+        - value_selector:
+          - '1760901931480'
+          - text
+          value_type: string
+          variable: text
+      height: 52
+      id: '1760902452394'
+      position:
+        x: 1503.0978261076555
+        y: -165.40456803321393
+      positionAbsolute:
+        x: 1503.0978261076555
+        y: -165.40456803321393
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - file:
+            - '1756158961317'
+            - video_file
+            id: key-value-534
+            key: videos
+            type: file
+            value: ''
+          type: form-data
+        headers: ''
+        method: post
+        params: 'every_nth:60
+
+          resize_w:512
+
+          resize_h:288
+
+          convert:rgb
+
+          return_wav:link'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Ingestion (Local Only)
+        type: http-request
+        url: http://video-extractor:8000/extract
+        variables: []
+      height: 137
+      id: '1759006986494'
+      position:
+        x: -922.3419529711342
+        y: 54.324536916592145
+      positionAbsolute:
+        x: -922.3419529711342
+        y: 54.324536916592145
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nfrom typing import List, Dict, Any\n\ndef main(raw_body:\
+          \ str) -> Dict[str, Any]:\n    out: Dict[str, Any] = {\n        \"wav_url\"\
+          : \"\",\n        \"frames_json_url\": \"\",\n        \"frame_urls\": [],\
+          \        # always a list\n        \"frames_saved\": 0,       # always a\
+          \ number\n        \"error\": \"\"              # always a string\n    }\n\
+          \    try:\n        data = json.loads(raw_body or \"{}\")\n        results\
+          \ = data.get(\"results\") or []\n        if not isinstance(results, list)\
+          \ or not results:\n            raise ValueError(\"results missing or empty\"\
+          )\n\n        item = results[0] if isinstance(results[0], dict) else {}\n\
+          \        out[\"frames_saved\"] = int(item.get(\"frames_saved\") or 0)\n\n\
+          \        fj = (item.get(\"frames_json_url\") or \"\").strip()\n        if\
+          \ fj:\n            out[\"frames_json_url\"] = fj\n\n        wav = item.get(\"\
+          wav\")\n        if isinstance(wav, str) and wav.strip():\n            out[\"\
+          wav_url\"] = wav.strip()\n\n    except Exception as e:\n        out[\"error\"\
+          ] = f\"{type(e).__name__}: {e}\"\n\n    return out"
+        code_language: python3
+        outputs:
+          error:
+            children: null
+            type: string
+          frame_urls:
+            children: null
+            type: array[string]
+          frames_json_url:
+            children: null
+            type: string
+          frames_saved:
+            children: null
+            type: number
+          wav_url:
+            children: null
+            type: string
+        selected: false
+        title: Parse Ingestion JSON
+        type: code
+        variables:
+        - value_selector:
+          - '1759006986494'
+          - body
+          value_type: string
+          variable: raw_body
+      height: 52
+      id: '1759007037395'
+      position:
+        x: -643.600315657043
+        y: 54.324536916592145
+      positionAbsolute:
+        x: -643.600315657043
+        y: 54.324536916592145
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import os\nimport requests\nfrom typing import Dict, Any, Optional\n\
+          \n# --- Credentials from environment (no hardcoded secrets) ---\nOPENAI_API_KEY\
+          \ = os.environ.get(\"OPENAI_API_KEY\", \"\")\nOPENAI_API_BASE = os.environ.get(\"\
+          OPENAI_API_BASE\", \"https://api.openai.com/v1\")\nWHISPER_MODEL = os.environ.get(\"\
+          WHISPER_MODEL\", \"whisper-1\")\n\n# Cap download size (~1 GB)\nMAX_BYTES\
+          \ = 1_000_000 * 1024\n\n# In-cluster hosts that must bypass proxies\nLOCAL_HOSTS\
+          \ = (\"video-extractor:8000\", \"localhost:8000\", \"127.0.0.1:8000\", \"\
+          api:5001\")\n\ndef _is_local(url: str) -> bool:\n    u = url or \"\"\n \
+          \   return any(h in u for h in LOCAL_HOSTS)\n\ndef _session_for(url: str)\
+          \ -> requests.Session:\n    s = requests.Session()\n    if _is_local(url):\n\
+          \        s.proxies.update({\"http\": None, \"https\": None})\n        s.trust_env\
+          \ = False\n    return s\n\ndef _download_audio(url: str, timeout: int =\
+          \ 180) -> bytes:\n    s = _session_for(url)\n    r = s.get(url, stream=True,\
+          \ timeout=timeout)\n    r.raise_for_status()\n    buf = bytearray()\n  \
+          \  for chunk in r.iter_content(65536):\n        if not chunk:\n        \
+          \    continue\n        buf.extend(chunk)\n        if len(buf) > MAX_BYTES:\n\
+          \            raise ValueError(\"audio too large\")\n    return bytes(buf)\n\
+          \ndef _transcribe(wav_bytes: bytes) -> str:\n    if not OPENAI_API_KEY:\n\
+          \        raise RuntimeError(\"missing OPENAI_API_KEY environment variable\"\
+          )\n\n    # Bypass proxies for outbound OpenAI call\n    s = requests.Session()\n\
+          \    s.proxies.update({\"http\": None, \"https\": None})\n    s.trust_env\
+          \ = False\n\n    headers = {\"Authorization\": f\"Bearer {OPENAI_API_KEY}\"\
+          }\n    files = {\"file\": (\"audio.wav\", wav_bytes, \"audio/wav\")}\n \
+          \   data = {\"model\": WHISPER_MODEL}\n\n    resp = s.post(f\"{OPENAI_API_BASE}/audio/transcriptions\"\
+          ,\n                  headers=headers, files=files, data=data, timeout=300)\n\
+          \n    if resp.status_code >= 400:\n        try:\n            detail = resp.json()\n\
+          \        except Exception:\n            detail = {\"text\": resp.text}\n\
+          \        raise RuntimeError(f\"http_{resp.status_code}: {detail}\")\n\n\
+          \    j = resp.json()\n    if isinstance(j, dict) and isinstance(j.get(\"\
+          text\"), str):\n        return j[\"text\"].strip()\n    segs = j.get(\"\
+          segments\") if isinstance(j, dict) else None\n    if isinstance(segs, list):\n\
+          \        return \" \".join(s.get(\"text\", \"\") for s in segs if isinstance(s,\
+          \ dict)).strip()\n    return \"\"\n\ndef _resolve_source_url(wav_url: Optional[str],\
+          \ video_file: Optional[dict]) -> Optional[str]:\n    if wav_url:\n     \
+          \   return wav_url.strip()\n    if isinstance(video_file, dict):\n     \
+          \   path = video_file.get(\"url\") or video_file.get(\"remote_url\")\n \
+          \       if isinstance(path, str) and path.strip():\n            if path.startswith(\"\
+          http://\") or path.startswith(\"https://\"):\n                return path\n\
+          \            return f\"http://api:5001{path}\"\n    return None\n\ndef main(wav_url:\
+          \ str = \"\", video_file: dict = None, **kwargs) -> Dict[str, Any]:\n  \
+          \  out: Dict[str, Any] = {\"transcript\": \"\", \"error\": \"\"}\n    try:\n\
+          \        src = _resolve_source_url(wav_url, video_file)\n        if not\
+          \ src:\n            out[\"error\"] = \"no_source_url\"\n            return\
+          \ out\n\n        try:\n            audio = _download_audio(src)\n      \
+          \      if not audio:\n                out[\"error\"] = \"empty_audio\"\n\
+          \                return out\n        except Exception as e:\n          \
+          \  out[\"error\"] = f\"download_fail: {type(e).__name__}: {e}\"\n      \
+          \      return out\n\n        try:\n            text = _transcribe(audio)\n\
+          \            out[\"transcript\"] = text or \"\"\n            if not out[\"\
+          transcript\"]:\n                out[\"error\"] = \"empty_transcript\"\n\
+          \            return out\n        except Exception as e:\n            out[\"\
+          error\"] = f\"asr_fail: {type(e).__name__}: {e}\"\n            return out\n\
+          \n    except Exception as e:\n        out[\"error\"] = f\"fatal: {type(e).__name__}:\
+          \ {e}\"\n        return out\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          error:
+            children: null
+            type: string
+          transcript:
+            children: null
+            type: string
+        selected: true
+        title: ASR
+        type: code
+        variables:
+        - value_selector:
+          - '1759007037395'
+          - wav_url
+          value_type: string
+          variable: wav_url
+      height: 52
+      id: '1760255020414'
+      position:
+        x: -215.73346791638897
+        y: 423.84887652613395
+      positionAbsolute:
+        x: -215.73346791638897
+        y: 423.84887652613395
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(frames_json_url: str = \"\") -> dict:\n    \"\"\"\n    Input:\n\
+          \      frames_json_url - string like \"http://video-extractor:8000/static/ASR_Test_frames.json\"\
+          \n    Output:\n      {\"frame_urls\": [\"http://video-extractor:8000/static/ASR_Test_0.jpg\"\
+          , ...]}\n    \"\"\"\n    import requests, json\n\n    if not isinstance(frames_json_url,\
+          \ str) or not frames_json_url.startswith(\"http\"):\n        return {\"\
+          frame_urls\": []}\n\n    try:\n        # local service → disable proxies\n\
+          \        s = requests.Session()\n        if \"video-extractor:8000\" in\
+          \ frames_json_url:\n            s.proxies.update({\"http\": None, \"https\"\
+          : None})\n            s.trust_env = False\n\n        r = s.get(frames_json_url,\
+          \ timeout=60)\n        r.raise_for_status()\n\n        data = r.json()\n\
+          \        if not isinstance(data, list):\n            return {\"frame_urls\"\
+          : []}\n\n        urls = [u.strip() for u in data if isinstance(u, str) and\
+          \ u.strip()]\n        return {\"frame_urls\": urls}\n    except Exception:\n\
+          \        return {\"frame_urls\": []}"
+        code_language: python3
+        desc: ''
+        outputs:
+          frame_urls:
+            children: null
+            type: array[string]
+        selected: false
+        title: Prepare Frames for Iterator
+        type: code
+        variables:
+        - value_selector:
+          - '1759007037395'
+          - frames_json_url
+          value_type: string
+          variable: frames_json_url
+      height: 52
+      id: '1760296205535'
+      position:
+        x: -215.73346791638897
+        y: -292.4252361748712
+      positionAbsolute:
+        x: -215.73346791638897
+        y: -292.4252361748712
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        error_handle_mode: continue-on-error
+        height: 211
+        is_parallel: false
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1760296205535'
+        - frame_urls
+        output_selector:
+        - '1760908934229'
+        - structured_output
+        output_type: array[object]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1760900115479start
+        title: Caption Frames
+        type: iteration
+        width: 692
+      height: 211
+      id: '1760900115479'
+      position:
+        x: 292.2741464108203
+        y: -292.4252361748712
+      positionAbsolute:
+        x: 292.2741464108203
+        y: -292.4252361748712
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 692
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1760900115479start
+      parentId: '1760900115479'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 316.2741464108203
+        y: -224.4252361748712
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data: []
+          type: none
+        desc: ''
+        headers: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1760900115479'
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          connect: 60
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: Pull Frame File
+        type: http-request
+        url: '{{#1760900115479.item#}}'
+        variables: []
+      height: 124
+      id: '1760908898725'
+      parentId: '1760900115479'
+      position:
+        x: 107.4027746951806
+        y: 65
+      positionAbsolute:
+        x: 399.6769211060009
+        y: -227.4252361748712
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1760900115479'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-5-chat-latest
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 23bfe5dd-da33-48a9-9c52-5a6acbe6d022
+          role: system
+          text: ''
+        - id: 6cf8baa4-ca85-492d-a38c-56311f4b5848
+          role: user
+          text: '
+
+            Describe this frame in one or two sentences.
+
+            '
+        selected: false
+        structured_output:
+          schema:
+            properties:
+              actions:
+                description: Notable actions, events, or movements visible in the
+                  frame.
+                items:
+                  type: string
+                type: array
+              confidence:
+                description: Model self-assessed confidence in the accuracy of the
+                  summary and detected elements, between 0 and 1.
+                type: number
+              primary_objects:
+                description: Key subjects, items, or entities present in the frame.
+                items:
+                  type: string
+                type: array
+              summary:
+                description: A concise one- to two-sentence description of what is
+                  happening in the frame.
+                type: string
+            required:
+            - summary
+            - confidence
+            type: object
+        structured_output_enabled: true
+        title: Captioner
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - '1760908898725'
+            - files
+          enabled: true
+      height: 88
+      id: '1760908934229'
+      parentId: '1760900115479'
+      position:
+        x: 406.1125014749871
+        y: 65
+      positionAbsolute:
+        x: 698.3866478858074
+        y: -227.4252361748712
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    viewport:
+      x: 143.30453486896863
+      y: 179.54807732748395
+      zoom: 0.25
+  rag_pipeline_variables: []
