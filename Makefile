@@ -18,7 +18,7 @@ up:
 
 ## Stop and remove containers + volumes
 down:
-	cd $(DIFY_DOCKER_DIR) && docker compose down -v
+	cd $(DIFY_DOCKER_DIR) && docker compose down
 
 ## Stream logs from all services
 logs:
